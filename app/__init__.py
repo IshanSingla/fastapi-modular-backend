@@ -95,6 +95,6 @@ app.include_router(health_router, prefix="/api/health", tags=["Health"])
 @app.get("/", tags=["Root"])
 async def root(response: ResponseModel = Depends(trace_request)):
     return response.success_response(
-        data={"message": f"Welcome to {settings.PROJECT_NAME} API"},
+        data=f"Welcome to {settings.PROJECT_NAME} API",
         message="API is running"
     )
